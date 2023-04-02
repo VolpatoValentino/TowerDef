@@ -11,14 +11,14 @@ public class CreateCube : MonoBehaviour
     [SerializeField]
     private LayerMask layerMask;
 
-
+    private List<Vector3> savedPosition;
   
 
 
     void Start()
     {
         grid = FindObjectOfType<Grid3D>();
-        
+        savedPosition= new List<Vector3>();
     }
 
     // Update is called once per frame
@@ -45,13 +45,13 @@ public class CreateCube : MonoBehaviour
             if (!CheckAlreadySpawned(cube.transform, clickPoint))
             {
                 cube.transform.position = finalPos;
-                
+                AddToList(finalPos);
             }
             else
             {
                 cube.transform.position = finalPos + new Vector3(0,1,0);
-               
                 
+                AddToList(finalPos);
             }
             
             //check if cube is above y Max, ceiling should always be -1 of grid y dimension
@@ -67,5 +67,16 @@ public class CreateCube : MonoBehaviour
             return true;
         }
         return false;
+    }
+    private void AddToList(Vector3 positionSaved)
+    {
+        if (!savedPosition.Contains(positionSaved))
+        {
+            savedPosition.Add(positionSaved);
+        }
+        else
+        {
+            Destroy(cube);
+        }
     }
 }
