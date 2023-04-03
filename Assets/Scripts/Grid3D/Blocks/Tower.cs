@@ -8,13 +8,11 @@ public class Tower : GenericBlock
     {
         onDetection += Shoot;
     }
-    void Start()
+
+
+    private void Shoot(Transform eneyPos)
     {
-        
+        Debug.Log("eventFIred");
     }
 
-    private void Shoot()
-    {
-
-    }
 }

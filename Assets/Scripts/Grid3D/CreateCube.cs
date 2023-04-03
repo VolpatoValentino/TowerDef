@@ -6,6 +6,7 @@ public class CreateCube : MonoBehaviour
 {
     private Grid3D grid;
     private GameObject cube;
+    public GameObject towerParent;
     [SerializeField]
     private float ceiling;
     [SerializeField]
@@ -41,7 +42,9 @@ public class CreateCube : MonoBehaviour
         Vector3 finalPos = grid.GetNearPointOnGrid(clickPoint) + new Vector3(0,0.5f,0);
         if(ObjectPicker.Instance.selectedObj != null)
         {
+
             cube = Instantiate(ObjectPicker.Instance.selectedObj);
+
             if (!CheckAlreadySpawned(cube.transform, clickPoint))
             {
                 cube.transform.position = finalPos;
