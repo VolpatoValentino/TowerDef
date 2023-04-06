@@ -7,6 +7,7 @@ using UnityEngine;
 [DisallowMultipleComponent]
 public class TowerManager : MonoBehaviour
 {
+
     [SerializeField]
     float speedBullet;
     public GameObject bullet;
@@ -47,4 +48,5 @@ public class TowerManager : MonoBehaviour
         GameObject bullet1 = Instantiate(bullet, transform.position, Quaternion.identity);
         bullet1.GetComponent<Rigidbody>().AddForce((playerPos - transform.position) * speedBullet, ForceMode.Impulse);
     }
+    
 }

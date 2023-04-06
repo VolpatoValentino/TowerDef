@@ -467,7 +467,7 @@ GameObject:
   m_Component:
   - component: {fileID: 558356970}
   - component: {fileID: 558356969}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -534,11 +534,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e415ffa658764949ad29a29a127772b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerParent: {fileID: 6681569959883182836, guid: 171f389df17698f4680d5c96be23c65e, type: 3}
-  ceiling: 4
+  cube: {fileID: 0}
+  ceiling: 10
   layerMask:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 144
 --- !u!4 &584747023
 Transform:
   m_ObjectHideFlags: 0
@@ -1557,7 +1557,7 @@ GameObject:
   - component: {fileID: 2052516599}
   - component: {fileID: 2052516598}
   - component: {fileID: 2052516597}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
